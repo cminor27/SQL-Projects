@@ -1,0 +1,49 @@
+/** Cupid's Couture - prices and item names inspired by items sold on Forever 21
+ACDC graphic tee, multicolor
+velvet tracksuit set, red
+heart printed bikini set, pink and red
+gold heart rimless eyeglasses
+darkwash boyfriend jeans
+black and white polka dot flare jeans
+off-the-shoulder bell sleeve sweater, taupe
+sweater knit crop top, cream
+basic denim jacket, lightwash 
+tie-front cutout romper, black
+active seamless racerback jumpsuit, navy
+crossbody bag, baby blue
+knit pompom beanie, gray
+faux croc leather slip on heel, white
+plush teddy bear indoor slippers, brown **/
+
+CREATE TABLE CupidsCouture (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, color TEXT, quantity INTEGER, rating INTEGER);
+
+INSERT INTO CupidsCouture VALUES (1, "ACDC grapic tee", 16.00,"multicolor", 1, 5);
+INSERT INTO CupidsCouture VALUES (2, "velvet tracksuit", 25.00, "red", 4, 4.5);
+INSERT INTO CupidsCouture VALUES (3, "heart printed bikini set", 19.00, "pink and red", 1, 3.5);
+INSERT INTO CupidsCouture VALUES (4, "gold heart rimless eyeglasses", 5.00, "gold", 6, 5); 
+INSERT INTO CupidsCouture VALUES (5, "darkwash boyfriend jeans", 24.99, "dark wash", 1, 4);
+INSERT INTO CupidsCouture VALUES (6, "black and white polka dot flare jeans", 23.00, "black and white", 6, 4.5);
+INSERT INTO CupidsCouture VALUES (7, "off-the-shoulder bell sleeve sweater", 34.99, "taupe", 1, 2.5);
+INSERT INTO CupidsCouture VALUES (8, "sweater knit crop top", 15.00, "cream", 3, 5);
+INSERT INTO CupidsCouture VALUES (9, "basic denim jacket", 25.00, "lightwash", 10, 3.5);
+INSERT INTO CupidsCouture VALUES (10, "tie-front cutout romper", 14.99, "black", 2, 2.5);
+INSERT INTO CupidsCouture VALUES (11, "active seamless racerback jumpsuit", 39.99, "navy", 3, 5);
+INSERT INTO CupidsCouture VALUES (12, "crossbody bag", 15.99, "baby blue", 1, 5);
+INSERT INTO CupidsCouture VALUES (13, "knit pompom beanie", 6.99, "gray", 10, 4.5);
+INSERT INTO CupidsCouture VALUES (14, "faux croc leather slip on heel", 8.99, "white", 2, 3.5);
+INSERT INTO CupidsCouture VALUES (15, "plush teddy bear indoor slippers", 6.00, "brown", 2, 5); 
+
+/**Organizing the data from the cheapest item to the most expensive item**/
+SELECT * FROM CupidsCouture ORDER BY price;
+
+/**Organizing the data from the lowest rated item to the highest rated item**/
+SELECT * FROM CupidsCouture ORDER BY rating;
+
+/**The highest price**/
+SELECT MAX(price) FROM CupidsCouture; 
+
+/**The lowest price**/
+SELECT MIN(price) FROM CupidsCouture;
+
+/**Total price**/
+SELECT SUM(price) FROM CupidsCouture;
