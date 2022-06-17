@@ -1,0 +1,66 @@
+/* Create table about the people and what they do here */
+CREATE TABLE Famous_People (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    zodiacsign TEXT);
+    
+INSERT INTO Famous_People (fullname, age, zodiacsign) VALUES ("Beyoncé Giselle Knowles-Carter", 40, "Virgo");
+
+INSERT INTO Famous_People (fullname, age, zodiacsign) VALUES ("Janis Lyn Joplin", 27, "Carpicorn");
+
+INSERT INTO Famous_People (fullname, age, zodiacsign) VALUES ("Prince Rogers Nelson", 57, "Gemini");
+
+INSERT INTO Famous_People (fullname, age, zodiacsign) VALUES ("Kurt Donald Cobain", 27, "Pisces");
+
+INSERT INTO Famous_People (fullname, age, zodiacsign) VALUES ("Peter Gene Hernandez", 36, "Libra");
+
+INSERT INTO Famous_People (fullname, age, zodiacsign) VALUES ("Amy Jade Winehouse", 27, "Virgo");
+
+INSERT INTO Famous_People (fullname, age, zodiacsign)
+VALUES ("Jackman Thomas Harlow", 24, "Pisces");
+
+INSERT INTO Famous_People (fullname, age, zodiacsign)
+VALUES ("James Paul McCartney", 79, "Gemini");
+
+INSERT INTO Famous_People (fullname, age, zodiacsign)
+VALUES ("Adele Laurie Blue Adkins", 34, "Taurus");
+
+INSERT INTO Famous_People (fullname, age, zodiacsign)
+VALUES ("Megan Jovon Ruth Pete", 27, "Aquarius" 
+);
+
+
+CREATE TABLE Occupation_Status (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Celebrity_id INTEGER,
+    occupation TEXT,
+    alive_or_deceased TEXT);
+
+INSERT INTO Occupation_Status (occupation, alive_or_deceased) VALUES ("singer", "alive");
+
+INSERT INTO Occupation_Status (occupation, alive_or_deceased) VALUES ("singer", "deceased");
+
+INSERT INTO Occupation_Status (occupation, alive_or_deceased) VALUES ("singer-songwriter", "deceased");
+
+INSERT INTO Occupation_Status (occupation, alive_or_deceased) VALUES ("singer-songwriter", "deceased");
+
+INSERT INTO Occupation_Status (occupation, alive_or_deceased) VALUES ("singer", "alive");
+
+INSERT INTO Occupation_Status (occupation, alive_or_deceased) VALUES ("singer-songwriter", "deceased");
+
+INSERT INTO Occupation_Status (occupation, alive_or_deceased) VALUES ("rapper", "alive"); 
+
+INSERT INTO Occupation_Status (occupation, alive_or_deceased) VALUES ("singer-songwriter", "alive");
+
+INSERT INTO Occupation_Status (occupation, alive_or_deceased) VALUES ("singer-songwriter", "alive");
+
+INSERT INTO Occupation_Status (occupation, alive_or_deceased) VALUES ("rapper", "alive"); 
+
+/* create join table*/
+
+SELECT Famous_People.fullname AS "full name", Famous_People.age, Famous_People.zodiacsign AS "zodiac sign", Occupation_Status.occupation, Occupation_Status.alive_or_deceased AS "alive or deceased"
+
+FROM Famous_People
+LEFT OUTER JOIN Occupation_Status
+ON Famous_People.id = Occupation_Status.id; 
