@@ -1,0 +1,48 @@
+/* What does the app's SQL look like? */
+
+CREATE TABLE Persona (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    First_name TEXT,
+    Last_name text,
+    age INTEGER,
+    email text);
+
+CREATE TABLE Workout_Stats (
+Person_id INTEGER PRIMARY KEY AUTOINCREMENT,
+Hrs_Sleep INTEGER,
+Hrs_work INTEGER,
+Hrs_working_out INTEGER,
+Mood Text);
+
+/* Data for Persona*/
+INSERT INTO Persona (First_name, Last_name, Age, Email) VALUES ("Leslie", "Knope", 37, "ilovewaffles@pawnee.com"); 
+INSERT INTO Persona (First_name, Last_name, Age, Email) VALUES ("Anne", "Perkins", 40, "imanneperkins@pawnee.com");
+INSERT INTO Persona (First_name, Last_name, Age, Email) VALUES ("Donna", "Meagle", 56, "treatyoself@pawnee.com");
+
+INSERT INTO Persona (First_name, Last_name, Age, Email) VALUES ("Tom", "Haverford", 36, "Entertainment720@pawnee.com");
+
+INSERT INTO Persona (First_name, Last_name, Age, Email) VALUES ("Leslie", "Nnope", 37, "ihatewaffles@pawnee.com");
+
+/* Data for Workout Stats*/
+INSERT INTO Workout_Stats (Hrs_Sleep, Hrs_Work, Hrs_working_out, Mood) VALUES (3, 12, 0, "Exhausted");
+
+INSERT INTO Workout_Stats (Hrs_Sleep, Hrs_Work, Hrs_working_out, Mood) VALUES(6, 8.5, 2, "Sleepy");
+
+INSERT INTO Workout_Stats (Hrs_Sleep, Hrs_Work, Hrs_working_out, Mood) VALUES (8, 0, 4, "Energized");
+
+INSERT INTO Workout_Stats (Hrs_Sleep, Hrs_Work, Hrs_working_out, Mood) VALUES (7, 0, 3.5, "Playful");
+
+/* Both tables */
+SELECT * FROM Persona;
+SELECT * FROM Workout_Stats;
+
+/* Update email for Tom Haverford*/
+SELECT * FROM Persona;
+UPDATE Persona
+Set email = "thaverford@pawnee.com" WHERE id = 4;
+SELECT * FROM Persona; 
+
+/* Delete Leslie Nnope from data */
+SELECT * FROM Persona; 
+DELETE FROM Persona WHERE id = 5;
+SELECT * FROM Persona;
